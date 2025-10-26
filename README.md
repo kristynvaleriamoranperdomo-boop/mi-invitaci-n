@@ -1,2 +1,2 @@
-# mi-invitaci-n
+# mi-invitacion
 Mi Invitación 
