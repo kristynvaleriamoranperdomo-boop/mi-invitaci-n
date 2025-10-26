@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un Capítulo Inolvidable</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;500;700&display=swap');
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1b1b1b, #2c2c2c);
+  overflow-x: hidden;
+  color: #fff;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Fondo con estrellas parpadeantes */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle linear infinite;
+}
+@keyframes twinkle {
+  0%,100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(2px); }
+}
+
+/* Tarjeta elegante */
+.card {
+  position: relative;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 0 30px rgba(255,255,255,0.1), 0 0 50px rgba(255,119,255,0.2);
+  max-width: 500px;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Brillo animado sobre tarjeta */
+.shine {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: -25%;
+  left: -25%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 60%);
+  transform: rotate(45deg);
+  animation: shine 4s infinite;
+  pointer-events: none;
+}
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Títulos */
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0 0 20px #fff, 0 0 25px #ff77ff, 0 0 30px #b86cff;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: #e7a7ff;
+  text-shadow: 0 0 15px #ff77ff, 0 0 20px #b86cff;
+  margin: 0.5rem 0;
+}
+
+p {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.4;
+}
+
+/* Botones elegantes */
+a.btn {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #b86cff, #ff77ff);
+  color: white;
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 35px;
+  margin: 0.5rem 0;
+  box-shadow: 0 8px 20px rgba(255,119,255,0.35);
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+  width: 100%;
+  max-width: 220px;
+}
+a.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(255,119,255,0.6);
+  filter: brightness(1.2);
+}
+
+/* Contenedor de música */
+.music-container {
+  margin-top: 1rem;
+}
+.music-container audio {
+  outline: none;
+  border-radius: 15px;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .card {
+    padding: 1.5rem 1rem;
+  }
+  a.btn {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+    max-width: 100%;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Estrellas de fondo -->
+<script>
+for(let i=0;i<50;i++){
+  const s = document.createElement('div');
+  s.classList.add('star');
+  s.style.top = Math.random()*window.innerHeight+'px';
+  s.style.left = Math.random()*window.innerWidth+'px';
+  s.style.width = s.style.height = (1+Math.random()*2)+'px';
+  s.style.animationDuration = (2+Math.random()*3)+'s';
+  document.body.appendChild(s);
+}
+</script>
+
+<div class="card">
+  <div class="shine"></div>
+  <h1>Un Capítulo Inolvidable</h1>
+  <p>✨ Te invita con mucho cariño ✨</p>
+  <h2>Emily Ramos</h2>
+  <p>💖 A compartir un momento especial lleno de recuerdos y alegría 💖</p>
+
+  <div class="info">
+    <p><strong>📅 Fecha:</strong> Domingo, 7 de diciembre</p>
+    <p><strong>🕗 Hora:</strong> 2:00 PM - 10:00 PM</p>
+    <p><strong>📍 Lugar:</strong> Colegio de Abogados Comayagua</p>
+  </div>
+
+  <div class="buttons">
+    <a href="https://www.google.com/maps?q=Colegio+de+Abogados+Comayagua" target="_blank" class="btn">📍 Ver ubicación</a>
+    <a href="https://wa.me/50493774198?text=Hola Emily, confirmo que asistiré a *Un Capítulo Inolvidable* invitado por *Emily Ramos*." target="_blank" class="btn">✅ Confirmar asistencia</a>
+    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Un Capítulo Inolvidable&dates=20251207T140000Z/20251207T220000Z&details=Evento especial junto a Emily Ramos&location=Colegio de Abogados Comayagua&sf=true&output=xml" target="_blank" class="btn">🗓️ Agregar al calendario</a>
+  </div>
+
+   <div class="music-container">
+    <audio controls>
+      <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+  </div>
+</div>
+
+</body>
+</html>

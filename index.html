@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un Capítulo Inolvidable</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('https://img.freepik.com/fotos-premium/patron-floral-acuarela-rosas-rosadas-amarillas-naranjas-otras-flores-sobre-fondo-blanco_1357641-4040.jpg?semt=ais_hybrid&w=740&q=80') no-repeat center center fixed;
+  background-size: cover;
+  color: #4a3f35;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Tarjeta principal */
+.card {
+  position: relative;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  background: rgba(255,255,240,0.9);
+  box-shadow: 0 10px 30px rgba(150,120,80,0.3);
+  max-width: 500px;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Brillo sutil estilo antiguo */
+.shine {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: -25%;
+  left: -25%;
+  background: linear-gradient(120deg, rgba(255,255,220,0.15) 0%, rgba(255,255,220,0) 60%);
+  transform: rotate(45deg);
+  animation: shine 6s infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Títulos */
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #7d5a3c;
+  text-shadow: 0 0 10px #ecd9b0;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: #a87e5a;
+  text-shadow: 0 0 8px #ecd9b0;
+  margin: 0.5rem 0;
+}
+
+p {
+  font-size: 1rem;
+  color: #5c4b3b;
+  margin: 0.3rem 0;
+  line-height: 1.4;
+}
+
+/* Botones estilo antiguo */
+a.btn {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  background: #d4c1a5;
+  color: #4a3f35;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin: 0.4rem 0;
+  box-shadow: 0 5px 15px rgba(120,90,50,0.3);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+a.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(120,90,50,0.5);
+}
+
+/* Contenedor de música */
+.music-container {
+  margin-top: 1rem;
+}
+.music-container audio {
+  outline: none;
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .card {
+    padding: 1.5rem 1rem;
+  }
+  a.btn {
+    font-size: 0.9rem;
+    padding: 0.45rem 0.8rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="shine"></div>
+  <h1>Un Capítulo Inolvidable</h1>
+  <p>✨ Te invita con mucho cariño ✨</p>
+  <h2>Emily Ramos</h2>
+  <p>💖 A compartir un momento especial lleno de recuerdos y alegría 💖</p>
+
+  <div class="info">
+    <p><strong>📅 Fecha:</strong> Domingo, 7 de diciembre</p>
+    <p><strong>🕗 Hora:</strong> 2:00 PM - 10:00 PM</p>
+    <p><strong>📍 Lugar:</strong> Colegio de Abogados Comayagua</p>
+  </div>
+
+  <div class="buttons">
+    <a href="https://www.google.com/maps?q=Colegio+de+Abogados+Comayagua" target="_blank" class="btn">📍 Ver ubicación</a>
+    <a href="https://wa.me/50493774198?text=Hola Emily, confirmo que asistiré a *Un Capítulo Inolvidable* invitado por *Emily Ramos*." target="_blank" class="btn">✅ Confirmar asistencia</a>
+    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Un Capítulo Inolvidable&dates=20251207T140000Z/20251207T220000Z&details=Evento especial junto a Emily Ramos&location=Colegio de Abogados Comayagua&sf=true&output=xml" target="_blank" class="btn">🗓️ Agregar al calendario</a>
+  </div>
+
+   <div class="music-container">
+    <audio controls>
+      <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+  </div>
+</div>
+
+</body>
+</html>
