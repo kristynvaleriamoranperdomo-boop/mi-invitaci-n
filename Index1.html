@@ -91,7 +91,15 @@ p {
   line-height: 1.4;
 }
 
-/* Botones elegantes */
+/* Botones elegantes mejorados */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
 a.btn {
   display: inline-block;
   font-family: 'Montserrat', sans-serif;
@@ -99,18 +107,51 @@ a.btn {
   background: linear-gradient(135deg, #b86cff, #ff77ff);
   color: white;
   text-decoration: none;
-  padding: 0.7rem 1.2rem;
-  border-radius: 35px;
-  margin: 0.5rem 0;
-  box-shadow: 0 8px 20px rgba(255,119,255,0.35);
-  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
-  width: 100%;
-  max-width: 220px;
+  padding: 0.9rem 1.4rem;
+  border-radius: 50px;
+  width: 90%;
+  max-width: 260px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 25px rgba(255,119,255,0.35);
+  transition: all 0.3s ease;
 }
+
 a.btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 35px rgba(255,119,255,0.6);
-  filter: brightness(1.2);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(255,119,255,0.6);
+  filter: brightness(1.15);
+}
+
+/* Efecto de toque para móviles */
+a.btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 15px rgba(255,119,255,0.4);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .card {
+    padding: 1.3rem 0.9rem;
+  }
+  a.btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+    width: 100%;
+    border-radius: 45px;
+  }
+  .buttons {
+    gap: 1rem;
+  }
+  p {
+    font-size: 0.95rem;
+  }
 }
 
 /* Contenedor de música */
@@ -163,20 +204,24 @@ for(let i=0;i<50;i++){
 <div class="card">
   <div class="shine"></div>
   <h1>Un Capítulo Inolvidable</h1>
-  <p>✨ Te invita con mucho cariño ✨</p>
+  <p> Te invita con mucho cariño  </p>
   <h2>Emily Ramos</h2>
-  <p>💖 A compartir un momento especial lleno de recuerdos y alegría 💖</p>
+  <p> A compartir un momento especial lleno de recuerdos y alegría </p>
+  <p> <strong>Código de vestimenta:</strong>
+Elegante.
+(Puedes traer traje de baño para disfrutar después de la celebración.) </p>
+  
 
   <div class="info">
-    <p><strong>📅 Fecha:</strong> Domingo, 7 de diciembre</p>
-    <p><strong>🕗 Hora:</strong> 2:00 PM - 10:00 PM</p>
-    <p><strong>📍 Lugar:</strong> Colegio de Abogados Comayagua</p>
+    <p><strong> Fecha:</strong> Domingo, 7 de diciembre</p>
+    <p><strong> Hora:</strong> 3:00 PM - 10:00 PM</p>
+    <p><strong> Lugar:</strong> Colegio de Abogados Comayagua</p>
   </div>
 
   <div class="buttons">
-    <a href="https://www.google.com/maps?q=Colegio+de+Abogados+Comayagua" target="_blank" class="btn">📍 Ver ubicación</a>
-    <a href="https://wa.me/50493774198?text=Hola Emily, confirmo que asistiré a *Un Capítulo Inolvidable* invitado por *Emily Ramos*." target="_blank" class="btn">✅ Confirmar asistencia</a>
-    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Un Capítulo Inolvidable&dates=20251207T140000Z/20251207T220000Z&details=Evento especial junto a Emily Ramos&location=Colegio de Abogados Comayagua&sf=true&output=xml" target="_blank" class="btn">🗓️ Agregar al calendario</a>
+    <a href="https://www.google.com/maps?q=Colegio+de+Abogados+Comayagua" target="_blank" class="btn"> Ver ubicación</a>
+    <a href="https://wa.me/50493774198?text=Hola Emily, confirmo que asistiré a *Un Capítulo Inolvidable* invitado por *Emily Ramos*." target="_blank" class="btn"> Confirmar asistencia</a>
+    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Un Capítulo Inolvidable&dates=20251207T140000Z/20251207T220000Z&details=Evento especial junto a Emily Ramos&location=Colegio de Abogados Comayagua&sf=true&output=xml" target="_blank" class="btn"> Agregar al calendario</a>
   </div>
 
    <div class="music-container">
