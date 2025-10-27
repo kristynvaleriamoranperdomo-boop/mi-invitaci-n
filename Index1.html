@@ -91,12 +91,12 @@ p {
   line-height: 1.4;
 }
 
-/* Botones elegantes con dos juntos y uno debajo */
+/* Botones elegantes con dos arriba y uno debajo */
 .buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
   margin-top: 1rem;
 }
 
@@ -107,7 +107,7 @@ a.btn {
   background: linear-gradient(135deg, #b86cff, #ff77ff);
   color: white;
   text-decoration: none;
-  padding: 0.55rem 1rem;
+  padding: 0.6rem 1rem;
   border-radius: 40px;
   text-align: center;
   letter-spacing: 0.3px;
@@ -128,16 +128,17 @@ a.btn:active {
   box-shadow: 0 4px 12px rgba(255,119,255,0.4);
 }
 
-/* Responsive: todos debajo en pantallas pequeñas */
-@media (max-width: 480px) {
+/* --- Estilo perfecto para celular --- */
+@media (max-width: 600px) {
   .buttons {
     flex-direction: column;
-    gap: 0.8rem;
+    align-items: center;
   }
   a.btn {
-    width: 100%;
-    max-width: 220px;
+    width: 90%;
+    max-width: 250px;
     font-size: 0.9rem;
+    padding: 0.65rem 1rem;
   }
 }
 
