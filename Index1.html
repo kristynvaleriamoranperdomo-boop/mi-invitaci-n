@@ -91,66 +91,53 @@ p {
   line-height: 1.4;
 }
 
-/* Botones elegantes mejorados */
+/* Botones elegantes con dos juntos y uno debajo */
 .buttons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
   margin-top: 1rem;
 }
 
 a.btn {
   display: inline-block;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   background: linear-gradient(135deg, #b86cff, #ff77ff);
   color: white;
   text-decoration: none;
-  padding: 0.9rem 1.4rem;
-  border-radius: 50px;
-  width: 90%;
-  max-width: 260px;
+  padding: 0.55rem 1rem;
+  border-radius: 40px;
   text-align: center;
-  letter-spacing: 0.5px;
-  box-shadow: 0 8px 25px rgba(255,119,255,0.35);
+  letter-spacing: 0.3px;
+  box-shadow: 0 6px 15px rgba(255,119,255,0.3);
   transition: all 0.3s ease;
+  width: calc(50% - 0.5rem); /* dos por fila */
+  max-width: 200px;
 }
 
 a.btn:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 40px rgba(255,119,255,0.6);
-  filter: brightness(1.15);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255,119,255,0.5);
+  filter: brightness(1.1);
 }
 
-/* Efecto de toque para móviles */
 a.btn:active {
-  transform: scale(0.97);
-  box-shadow: 0 4px 15px rgba(255,119,255,0.4);
+  transform: scale(0.96);
+  box-shadow: 0 4px 12px rgba(255,119,255,0.4);
 }
 
-/* Responsive */
+/* Responsive: todos debajo en pantallas pequeñas */
 @media (max-width: 480px) {
-  h1 {
-    font-size: 1.9rem;
-  }
-  h2 {
-    font-size: 1.4rem;
-  }
-  .card {
-    padding: 1.3rem 0.9rem;
+  .buttons {
+    flex-direction: column;
+    gap: 0.8rem;
   }
   a.btn {
-    font-size: 1rem;
-    padding: 0.8rem 1.2rem;
     width: 100%;
-    border-radius: 45px;
-  }
-  .buttons {
-    gap: 1rem;
-  }
-  p {
-    font-size: 0.95rem;
+    max-width: 220px;
+    font-size: 0.9rem;
   }
 }
 
