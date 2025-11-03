@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación de Graduación</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+body {
+  font-family: 'Playfair Display', serif;
+  background: url('https://thumbs.dreamstime.com/b/fondo-de-graduaci%C3%B3n-ilustraci%C3%B3n-vectorial-381913337.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* ANIMACIÓN DE PARTÍCULAS DORADAS */
+.estrellas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+.estrellas span {
+  position: absolute;
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: gold;
+  border-radius: 50%;
+  animation: mover 10s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes mover {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  100% { transform: translateY(-800px) scale(0.5); opacity: 0; }
+}
+
+/* CONTENEDOR PRINCIPAL */
+.invitacion {
+  position: relative;
+  width: 90%;
+  max-width: 420px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.85);
+  text-align: center;
+  overflow: hidden;
+  z-index: 2;
+  animation: aparecer 1.3s ease forwards;
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+/* ANIMACIÓN DE APARICIÓN */
+@keyframes aparecer {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ESQUINA DORADA CON EFECTO BRILLO */
+.invitacion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #ffd700 10%, transparent 10%);
+  border-bottom-left-radius: 50%;
+  z-index: 2;
+  animation: brillo 3s infinite linear;
+  opacity: 0.8;
+}
+
+@keyframes brillo {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(1.8); }
+  100% { filter: brightness(1); }
+}
+
+/* TEXTOS */
+.titulo {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #000;
+  animation: subir 1.2s ease-in-out;
+}
+
+.subtitulo {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 20px;
+  animation: subir 1.4s ease-in-out;
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.imagen {
+  width: 140px;
+  margin-bottom: 20px;
+  animation: aparecer 1.6s ease;
+}
+
+.nombre {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.detalles span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #222;
+}
+
+.mensaje {
+  font-style: italic;
+  font-size: 15px;
+  margin: 20px 0;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* BOTONES */
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  animation: aparecer 2s ease;
+}
+
+.botones a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background-color: rgba(255, 215, 0, 0.15);
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.botones a:hover {
+  background-color: rgba(255, 215, 0, 0.35);
+  transform: scale(1.05);
+}
+
+.botones img {
+  width: 22px;
+  height: 22px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 480px) {
+  .titulo { font-size: 24px; }
+  .subtitulo { font-size: 16px; }
+  .nombre { font-size: 18px; }
+  .detalles span { font-size: 14px; }
+  .mensaje { font-size: 14px; }
+  .imagen { width: 120px; }
+  .botones a { font-size: 14px; padding: 9px 12px; }
+}
+</style>
+</head>
+
+<body>
+  <!-- Capa de estrellas -->
+  <div class="estrellas">
+    <!-- Generamos varias partículas doradas -->
+    <span style="top:90%; left:10%; animation-delay:0s; animation-duration:12s;"></span>
+    <span style="top:95%; left:30%; animation-delay:2s; animation-duration:10s;"></span>
+    <span style="top:100%; left:50%; animation-delay:1s; animation-duration:11s;"></span>
+    <span style="top:92%; left:70%; animation-delay:3s; animation-duration:9s;"></span>
+    <span style="top:98%; left:85%; animation-delay:4s; animation-duration:12s;"></span>
+    <span style="top:97%; left:20%; animation-delay:5s; animation-duration:10s;"></span>
+    <span style="top:99%; left:60%; animation-delay:1.5s; animation-duration:13s;"></span>
+  </div>
+
+  <!-- Tarjeta -->
+  <div class="invitacion">
+    <div class="titulo">FIESTA DE GRADUACIÓN</div>
+    <div class="subtitulo">Noche de Logros</div>
+
+    <img src="https://www.pnguniverse.com/wp-content/uploads/2020/12/Birrete-de-graduacion.png" alt="Birrete" class="imagen">
+    
+    <div class="nombre">Te Invita<br><strong>ANTHONY VIJIL</strong></div>
+
+    <div class="detalles">
+      <span><strong>Hora:</strong> 6:00 p.m</span>
+      <span><strong>Fecha:</strong> Sábado 13 de Diciembre</span>
+      <span><strong>Lugar:</strong> Casa adelante de la Tienda El Galán en La Sabana, Comayagua</span>
+    </div>
+
+    <div class="mensaje">
+      Con gran orgullo y alegría, me complace invitarle a la celebración de mi graduación, un logro que marca el cierre de una etapa importante y el inicio de nuevos horizontes.
+    </div>
+
+    <div class="botones">
+      <a href="https://wa.me/50496810747?text=Hola%21%20Confirmo%20mi%20asistencia%20a%20La%20Fiesta%20de%20Graduación%20de%20Anthony%20Vijil." target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+        Confirmar asistencia
+      </a>
+
+      <a href="https://maps.app.goo.gl/6mAqTXxrvPTBoCeM7" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Ubicación">
+        Ver ubicación
+      </a>
+    </div>
+  </div>
+</body>
+</html>
