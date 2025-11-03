@@ -10,7 +10,8 @@
 
 body {
   font-family: 'Playfair Display', serif;
-  background: url('https://thumbs.dreamstime.com/b/fondo-de-graduaci%C3%B3n-ilustraci%C3%B3n-vectorial-381913337.jpg') no-repeat center center fixed;
+  background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+              url('https://thumbs.dreamstime.com/b/fondo-de-graduaci%C3%B3n-ilustraci%C3%B3n-vectorial-381913337.jpg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -18,10 +19,16 @@ body {
   min-height: 100vh;
   margin: 0;
   overflow: hidden;
-  touch-action: pan-x pan-y;
+  animation: fondoMovimiento 15s ease-in-out infinite alternate;
 }
 
-/* ANIMACIÓN DE PARTÍCULAS DORADAS */
+/* Fondo se mueve sutilmente */
+@keyframes fondoMovimiento {
+  0% { background-position: center top; }
+  100% { background-position: center bottom; }
+}
+
+/* ESTRELLAS DORADAS */
 .estrellas {
   position: absolute;
   width: 100%;
@@ -48,37 +55,36 @@ body {
   100% { transform: translateY(-800px) scale(0.5); opacity: 0; }
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* TARJETA PRINCIPAL */
 .invitacion {
   position: relative;
-  width: 85%;
+  width: 88%;
   max-width: 380px;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  padding: 25px 20px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.85);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 22px;
+  padding: 28px 22px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
   text-align: center;
   overflow: hidden;
   z-index: 2;
-  animation: flotar 5s ease-in-out infinite alternate;
-  transition: transform 0.3s ease;
+  animation: flotar 4s ease-in-out infinite alternate;
+  backdrop-filter: blur(5px);
 }
 
-/* EFECTO DE FLOTAR */
+/* Movimiento suave de flotación */
 @keyframes flotar {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(0.5deg); }
-  100% { transform: translateY(4px) rotate(-0.5deg); }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
 }
 
-/* ESQUINA DORADA CON EFECTO BRILLO */
+/* Esquina dorada brillante */
 .invitacion::before {
   content: '';
   position: absolute;
   top: 0;
   right: 0;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   background: linear-gradient(135deg, #ffd700 10%, transparent 10%);
   border-bottom-left-radius: 50%;
   z-index: 2;
@@ -92,38 +98,36 @@ body {
   100% { filter: brightness(1); }
 }
 
-/* TEXTOS */
+/* Textos */
 .titulo {
   font-size: 26px;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   color: #000;
-  animation: aparecer 1.2s ease-in-out;
 }
 
 .subtitulo {
-  font-size: 17px;
-  color: #444;
-  margin-bottom: 20px;
-  animation: aparecer 1.4s ease-in-out;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 18px;
 }
 
 .imagen {
   width: 120px;
   margin-bottom: 15px;
-  animation: aparecer 1.6s ease;
+  animation: aparecer 1.2s ease;
 }
 
 .nombre {
   font-weight: bold;
-  font-size: 19px;
-  margin-bottom: 15px;
+  font-size: 18px;
+  margin-bottom: 18px;
   color: #000;
 }
 
 .detalles span {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   font-size: 14px;
   color: #222;
 }
@@ -131,12 +135,12 @@ body {
 .mensaje {
   font-style: italic;
   font-size: 14px;
-  margin: 20px 0;
+  margin: 18px 0;
   line-height: 1.5;
   color: #333;
 }
 
-/* BOTONES */
+/* Botones */
 .botones {
   display: flex;
   justify-content: center;
@@ -150,7 +154,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 9px 12px;
-  background-color: rgba(255, 215, 0, 0.15);
+  background-color: rgba(255, 215, 0, 0.25);
   color: #000;
   font-weight: bold;
   text-decoration: none;
@@ -161,42 +165,37 @@ body {
 }
 
 .botones a:hover {
-  background-color: rgba(255, 215, 0, 0.35);
+  background-color: rgba(255, 215, 0, 0.45);
   transform: scale(1.05);
 }
 
 .botones img {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 }
 
-/* ANIMACIÓN DE APARICIÓN */
+/* Animación aparecer */
 @keyframes aparecer {
-  from { opacity: 0; transform: translateY(25px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* RESPONSIVO */
+/* Ajuste para celulares */
 @media (max-width: 480px) {
-  .invitacion {
-    max-width: 320px;
-    padding: 20px 18px;
-  }
+  .invitacion { max-width: 340px; padding: 25px 20px; }
   .titulo { font-size: 22px; }
   .subtitulo { font-size: 15px; }
-  .nombre { font-size: 17px; }
+  .imagen { width: 100px; }
+  .nombre { font-size: 16px; }
   .detalles span { font-size: 13px; }
   .mensaje { font-size: 13px; }
-  .imagen { width: 100px; }
   .botones a { font-size: 13px; padding: 8px 10px; }
 }
 </style>
 </head>
 
 <body>
-  <!-- Capa de estrellas -->
   <div class="estrellas">
-    <!-- Partículas doradas flotando -->
     <span style="top:90%; left:10%; animation-delay:0s; animation-duration:12s;"></span>
     <span style="top:95%; left:30%; animation-delay:2s; animation-duration:10s;"></span>
     <span style="top:100%; left:50%; animation-delay:1s; animation-duration:11s;"></span>
@@ -206,13 +205,12 @@ body {
     <span style="top:99%; left:60%; animation-delay:1.5s; animation-duration:13s;"></span>
   </div>
 
-  <!-- Tarjeta -->
-  <div class="invitacion" id="tarjeta">
+  <div class="invitacion">
     <div class="titulo">FIESTA DE GRADUACIÓN</div>
     <div class="subtitulo">Noche de Logros</div>
 
     <img src="https://www.pnguniverse.com/wp-content/uploads/2020/12/Birrete-de-graduacion.png" alt="Birrete" class="imagen">
-    
+
     <div class="nombre">Te Invita<br><strong>ANTHONY VIJIL</strong></div>
 
     <div class="detalles">
@@ -228,52 +226,15 @@ body {
     <div class="botones">
       <a href="https://wa.me/50496810747?text=Hola%21%20Confirmo%20mi%20asistencia%20a%20La%20Fiesta%20de%20Graduación%20de%20Anthony%20Vijil." target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-        Confirmar
+        Confirmar asistencia
       </a>
 
       <a href="https://maps.app.goo.gl/6mAqTXxrvPTBoCeM7" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Ubicación">
-        Ver lugar
+        Ver ubicación
       </a>
     </div>
   </div>
-
-<script>
-/* Permite mover la tarjeta con el dedo o mouse */
-const tarjeta = document.getElementById('tarjeta');
-let isDragging = false;
-let startX, startY, offsetX = 0, offsetY = 0;
-
-tarjeta.addEventListener('mousedown', e => {
-  isDragging = true;
-  startX = e.clientX - offsetX;
-  startY = e.clientY - offsetY;
-});
-
-document.addEventListener('mouseup', () => isDragging = false);
-document.addEventListener('mousemove', e => {
-  if (!isDragging) return;
-  offsetX = e.clientX - startX;
-  offsetY = e.clientY - startY;
-  tarjeta.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(1.02)`;
-});
-
-/* Para pantallas táctiles */
-tarjeta.addEventListener('touchstart', e => {
-  isDragging = true;
-  const touch = e.touches[0];
-  startX = touch.clientX - offsetX;
-  startY = touch.clientY - offsetY;
-});
-
-tarjeta.addEventListener('touchend', () => isDragging = false);
-tarjeta.addEventListener('touchmove', e => {
-  if (!isDragging) return;
-  const touch = e.touches[0];
-  offsetX = touch.clientX - startX;
-  offsetY = touch.clientY - startY;
-  tarjeta.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(1.02)`;
-});
-</script>
 </body>
 </html>
+
